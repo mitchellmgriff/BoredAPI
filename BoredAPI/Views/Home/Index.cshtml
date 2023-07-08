@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model BoredAPI.Models.Activity
+
+<form method="POST" asp-action="Index" asp-controller="Activity">
+
+    <input type="number" asp-for="accessibility" />
+    <input type="text" asp-for="type" />
+    <input type="number" asp-for="participants" />
+    <input type="number" asp-for="price" />
+    <button type="submit">Submit</button>"
+         
+</form>
