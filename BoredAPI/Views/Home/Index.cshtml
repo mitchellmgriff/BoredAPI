@@ -2,13 +2,62 @@
     ViewData["Title"] = "Home Page";
 }
 @model BoredAPI.Models.Activity
-
+<div align="center">
 <form method="POST" asp-action="Index" asp-controller="Activity">
+    <div class="card center w-50 bg-dark-50">
+        <div class="card-header">
+            Activity Generator
+        </div>
+        <div class="card-body">
+    <label>How accessible would you like your activity to be?</label>
+    <select aria-label="select accessibility" class="form-select-sm" asp-for="accessibility">
+        <option selected>Select...</option>
+        <option value="0.1">Adventure mode - Lowest</option>
+        <option value="0.4">Inclusive Experience - Mid-Level</option>
+        <option value="0.8">Accessible Adventure - Highest</option>
+    </select>
 
-    <input type="number" asp-for="accessibility" />
-    <input type="text" asp-for="type" />
-    <input type="number" asp-for="participants" />
-    <input type="number" asp-for="price" />
-    <button type="submit">Submit</button>"
+    <br />
+    <br />
+
+    <label>What type of activity would you like to do?</label>
+     <select aria-label="select type" class="form-select-sm" asp-for="type">
+        <option selected>Select...</option>
+        <option value="recreational">Recreational</option>
+        <option value="social">Social</option>
+        <option value="diy">DIY</option>
+        <option value="charity">Charity</option>
+        <option value="cooking">Cooking</option>
+        <option value="relaxation">Relaxation</option>
+        <option value="music">Music</option>
+        <option value="busywork">Busy Work</option>
+    </select>
+    <br />
+    <br />
+    <label>How many participants?</label>
+      <select aria-label="select participants" class="form-select-sm" asp-for="participants">
+        <option selected>Select...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br />
+    <br />
+    <label>How much do you want to spend?</label>
+    <select aria-label="select price" class="form-select-sm" asp-for="price">
+        <option selected>Select...</option>
+        <option value="0.1">Free</option>
+        <option value="0.5">$5-$20</option>
+        <option value="0.8">$20+</option>
+    </select>
+    <br />
+        </div>
+        <div class="card-footer mx-auto w-100 ">
+    <button type="submit" class="btn btn-danger w-100">Generate Activity</button>
+        </div>
+    </div>
          
 </form>
+</div>
